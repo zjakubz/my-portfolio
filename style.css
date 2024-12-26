@@ -367,55 +367,96 @@ h2 {
 }
 
 /* Responsive Design */
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;  /* Hidden by default on desktop */
+    cursor: pointer;
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    z-index: 1001;  /* Ensure it stays above the mobile menu */
+}
+
+/* Hamburger Button Lines */
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 2px;  /* Slightly thinner for a more modern look */
+    background-color: var(--text-light);
+    margin: 5px 0;
+    transition: transform 0.3s ease-in-out,
+                opacity 0.2s ease-in-out;
+    transform-origin: center;
+}
+
+/* Active State Hamburger Animation */
+.hamburger.active span:first-child {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:last-child {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile Menu Styles */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2.5rem;
+    .hamburger {
+        display: block;  /* Show hamburger on mobile */
     }
 
     .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
+        position: fixed;
+        top: 70px;  /* Height of your navbar */
         left: 0;
         width: 100%;
+        height: calc(100vh - 70px);  /* Full height minus navbar */
         background-color: var(--background-light);
-        padding: 1rem;
+        padding: 2rem;
+        transform: translateX(-100%);  /* Start off-screen */
+        transition: transform 0.3s ease-in-out;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    /* Dark mode adjustments */
+    .dark-mode .nav-links {
+        background-color: var(--background-dark);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Active state for mobile menu */
+    .nav-links.mobile-active {
+        transform: translateX(0);  /* Slide in from left */
+    }
+
+    /* Individual nav items in mobile menu */
+    .nav-links li {
+        width: 100%;
         text-align: center;
+        padding: 0.75rem 0;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
 
-    .dark-mode .nav-links {
-        background-color: var(--background-dark);
+    .dark-mode .nav-links li {
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .nav-links.show {
-        display: flex;
-        flex-direction: column;
+    /* Remove border from last item */
+    .nav-links li:last-child {
+        border-bottom: none;
     }
+}
 
-    .hamburger {
-        display: block;
-        cursor: pointer;
-    }
-
-    .hamburger span {
-        display: block;
-        width: 25px;
-        height: 3px;
-        background-color: var(--text-light);
-        margin: 5px 0;
-        transition: var(--transition);
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-    }
-
-    .projects-grid,
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
+/* Prevent scrolling when mobile menu is open */
+body.menu-open {
+    overflow: hidden;
 }
 
 /* Animated Background */

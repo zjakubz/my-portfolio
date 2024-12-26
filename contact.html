@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Jakub Zítko</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background Animation Canvas -->
+    <canvas id="bgAnimation"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">JZ</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" data-lang-key="nav.domu">Domů</a></li>
+                <li><a href="about.html" data-lang-key="nav.omne">O mně</a></li>
+                <li><a href="index.html#projects" data-lang-key="nav.projekty">Projekty</a></li>
+                <li><a href="contact.html" data-lang-key="nav.kontakt" class="active">Kontakt</a></li>
+                
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="contact-page">
+        <div class="contact-container">
+            <h1 class="section-title gradient-text" style="padding-top: 100px;">Kontakt</h1>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:jakub.zitko11@gmail.com">jakub.zitko11@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+420737568886">+420 737 568 886</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Praha 8, Čimice</span>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20475.942635080886!2d14.41057071789919!3d50.12859362033922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470beb0f2c2fb8cd%3A0x7344b56fc181dfb2!2zxIxpbWljZSwgUHJhaGEgOA!5e0!3m2!1scs!2scz!4v1703599548444!5m2!1scs!2scz" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Jakub Zítko. <span data-lang-key="paticka.prava">Všechna práva vyhrazena.</span></p>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/animations.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

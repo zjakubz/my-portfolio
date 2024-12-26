@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail projektu | Jakub Zítko</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/project.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background Animation Canvas -->
+    <canvas id="bgAnimation"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">JZ</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" data-lang-key="nav.domu">Domů</a></li>
+                <li><a href="about.html" data-lang-key="nav.omne">O mně</a></li>
+                <li><a href="index.html#projects" data-lang-key="nav.projekty">Projekty</a></li>
+                <li><a href="contact.html" data-lang-key="nav.kontakt">Kontakt</a></li>
+                
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="project-hero-content">
+            <h1 class="project-title fade-in" data-project-title></h1>
+            <div class="project-meta fade-in">
+                <div class="project-tags" data-project-tags></div>
+                <div class="project-year" data-project-year></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details -->
+    <section class="project-details">
+        <div class="project-container">
+            <div class="project-overview">
+                <div class="overview-text">
+                    <h2 data-lang-key="projekt.prehled">Přehled</h2>
+                    <p data-project-overview></p>
+                </div>
+                <div class="overview-stats">
+                    <div class="stat-item">
+                        <span class="stat-label" data-lang-key="projekt.klient">Klient</span>
+                        <span class="stat-value" data-project-client></span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label" data-lang-key="projekt.role">Role</span>
+                        <span class="stat-value" data-project-role></span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label" data-lang-key="projekt.doba">Doba trvání</span>
+                        <span class="stat-value" data-project-duration></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-images">
+                <!-- Project 1 Images -->
+                <div class="project-image-set" id="project1-images">
+                    <img src="assets/project1-web/muj-web-project1.jpeg" alt="Webové Stránky na míru - Náhled" class="project-image fade-in">
+                    <img src="assets/project1-web/project1 - alex.jpeg" alt="Webové Stránky na míru - Detail" class="project-image fade-in">
+                </div>
+
+                <!-- Project 2 Images -->
+                <div class="project-image-set" id="project2-images">
+                    <img src="assets/project2-app/Chlastačka - project 2.png" alt="Mobilní aplikace - Náhled" class="project-image fade-in">
+                    <img src="assets/project2-app/Chlastačka - project 2.png" alt="Mobilní aplikace - Detail" class="project-image fade-in">
+                </div>
+
+                <!-- Project 3 Images -->
+                <div class="project-image-set" id="project3-images">
+                    <img src="assets/project3-other/kody-project3.png" alt="AI Dashboard - Náhled" class="project-image fade-in">
+                    <img src="assets/project3-other/kody-project3.png" alt="AI Dashboard - Detail" class="project-image fade-in">
+                </div>
+            </div>
+
+            <!-- Project Content -->
+            <div class="project-content">
+                <div class="content-section fade-in">
+                    <h3 data-lang-key="projekt.vyzva">Výzva</h3>
+                    <p data-project-challenge></p>
+                </div>
+                <div class="content-section fade-in">
+                    <h3 data-lang-key="projekt.reseni">Řešení</h3>
+                    <p data-project-solution></p>
+                </div>
+                <div class="content-section fade-in">
+                    <h3 data-lang-key="projekt.vysledky">Výsledky</h3>
+                    <p data-project-results></p>
+                </div>
+            </div>
+
+            <!-- Technologies Used -->
+            <div class="technologies fade-in">
+                <h3 data-lang-key="projekt.technologie">Použité technologie</h3>
+                <ul class="tech-list" data-project-technologies></ul>
+            </div>
+
+            <!-- Project Navigation -->
+            <div class="project-navigation">
+                <a href="#" class="prev-project" data-project-prev>
+                    <i class="fas fa-arrow-left"></i>
+                    <span data-lang-key="projekt.predchozi">Předchozí projekt</span>
+                </a>
+                <a href="#" class="next-project" data-project-next>
+                    <span data-lang-key="projekt.dalsi">Další projekt</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Jakub Zítko. <span data-lang-key="paticka.prava">Všechna práva vyhrazena.</span></p>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/projectsData.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
